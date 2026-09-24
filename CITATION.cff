@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 title: "localmapbench: nested-CV benchmarking of feature maps for local regression"
-version: 0.1.0
+version: 0.2.0
 date-released: "2026-09-24"
 type: software
 authors:

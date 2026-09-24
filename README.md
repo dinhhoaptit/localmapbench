@@ -1,18 +1,18 @@
 # localmapbench
 
+[![CI](https://github.com/dinhhoaptit/localmapbench/actions/workflows/ci.yml/badge.svg)](https://github.com/dinhhoaptit/localmapbench/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 Matched **nested cross-validation** benchmarking of feature preprocessors for **local regression**.
 
-This repository is being prepared for a [*Journal of Open Source Software*](https://joss.theoj.org/) submission. Public development starts here to satisfy JOSS open-history requirements.
+Public repository: https://github.com/dinhhoaptit/localmapbench  
+Prepared for [*Journal of Open Source Software*](https://joss.theoj.org/) (submit after ≥6 months of public development).
 
-## Why this exists
+## Why
 
-Neighborhood size \(k\) and the feature map interact. Comparing maps at a fixed small \(k\) confounds representation quality with smoothing. `localmapbench` provides a shared nested-CV protocol, train-only preprocessing, and a one-standard-error largest-\(k\) rule so differences are attributable to the map.
+Neighborhood size $k$ and the feature map interact. Comparing maps at a fixed small $k$ confounds representation quality with smoothing. `localmapbench` evaluates maps under shared nested folds, train-only fitting, and a one-standard-error largest-$k$ rule.
 
-## Status
-
-**v0.1.0 (alpha)** — package skeleton + license. Core maps and runners are being migrated from the research scripts under `software/`.
-
-## Install (development)
+## Install
 
 ```bash
 python -m venv .venv
@@ -20,19 +20,39 @@ python -m venv .venv
 pip install -e ".[dev]"
 ```
 
-## Quick check
+## Quickstart
 
 ```python
-import localmapbench
-print(localmapbench.__version__)
+from localmapbench import evaluate_maps_nested, make_regime, summarize_results
+from localmapbench.protocol import DEFAULT_MAPS
+
+X, y = make_regime("blocks", n=120, d=8, seed=0)
+maps = {"Raw": DEFAULT_MAPS["Raw"], "Binary": DEFAULT_MAPS["Binary"]}
+summary = summarize_results(
+    evaluate_maps_nested(X, y, maps=maps, n_splits=3, random_state=0)
+)
+print(summary)
 ```
 
-## Roadmap
+Or:
 
-1. Public GitHub history (this repo)  
-2. Migrate feature maps, nested-CV runner, diagnostic, and regime generators into `src/localmapbench/`  
-3. Tests + CI, examples, docs  
-4. JOSS `paper.md` after ≥6 months of public iterative development  
+```bash
+python examples/quickstart_blocks.py
+python examples/suitability_demo.py
+pytest -q
+```
+
+## Features
+
+- Feature maps: Raw, Binary/Soft blocks, Sliding, Pairwise, PLS, SIR
+- Nested CV protocol with 1-SE largest-$k$ selection
+- Five positive-control regimes
+- Train-only suitability diagnostic
+- Research scripts and frozen tables under `software/` (migration archive)
+
+## Citation
+
+See [CITATION.cff](CITATION.cff). JOSS `paper.md` is included for the forthcoming software paper.
 
 ## License
 
