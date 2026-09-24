@@ -1,0 +1,46 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Environments
+.venv/
+venv/
+.env
+.env.*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Large public data copies (download separately; see README)
+software/combined+cycle+power+plant_Engineering/
+software/concrete+compressive+strength_Engineering/
+software/wine+quality_General/
+software/gas+turbine+co+and+nox+emission+data+set/
+software/superconductivty+data/
+software/tecator+nir/
+software/flood_modeling/
+software/LSSP_supplementary_snapshot.zip
+software/*.zip
+
+# Heavy frozen MC replication dumps (keep summaries in repo if small)
+software/simulation_sensitivity_*_reps.csv
+software/synthetic_regime_ladder_mc_reps.csv
+
+# LaTeX build junk
+manuscript/*.aux
+manuscript/*.log
+manuscript/*.out
+manuscript/*.blg
+manuscript/*.bbl
+manuscript/*.pdf
