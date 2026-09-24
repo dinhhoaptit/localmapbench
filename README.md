@@ -39,6 +39,7 @@ Or:
 ```bash
 python examples/quickstart_blocks.py
 python examples/suitability_demo.py
+python examples/select_k_demo.py
 pytest -q
 ```
 

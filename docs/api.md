@@ -28,6 +28,7 @@ Default maps in `DEFAULT_MAPS`: Raw, Binary, Soft, Sliding, Pairwise, PLS, SIR.
 pytest -q
 python examples/quickstart_blocks.py
 python examples/suitability_demo.py
+python examples/select_k_demo.py
 ```
 
 Expected: tests pass; Blocks quickstart shows Binary RMSE below Raw on average.

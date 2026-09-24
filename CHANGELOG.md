@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Example of train-only 1-SE largest-$k$ selection (`examples/select_k_demo.py`).
+
 ## 0.2.0 — 2026-09-24
 
 - Public API: regimes, nested-CV protocol, suitability diagnostic.
