@@ -4,9 +4,10 @@ Order matters: **public repo timeline** is a hard gate. Start the GitHub clock e
 
 ## A. Pre-submission gates (desk-reject if missing)
 
-- [ ] Create public GitHub repository (browse/clone/issues without login)
+- [x] Local git repository initialized with iterative commits (skeleton) — 2026-09-24
+- [x] Create **public** GitHub repository and push — https://github.com/dinhhoaptit/localmapbench (PUBLIC, 2026-09-24)
 - [ ] Keep **> 6 months** of public, iterative development before JOSS submission (not a one-day dump)
-- [ ] OSI-approved LICENSE file in repo root (MIT/BSD/Apache/GPL-compatible as preferred)
+- [x] OSI-approved LICENSE file in repo root (MIT)
 - [ ] Evidence of research use (this project’s experiments / preprint / technical report / Zenodo methods archive; external users if any)
 - [ ] Feature-complete scope: reusable library, not “run these scripts once”
 

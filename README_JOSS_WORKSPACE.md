@@ -1,39 +1,37 @@
 # JOSS submission workspace
 
-Folder for the [*Journal of Open Source Software*](https://joss.theoj.org/) track (renamed from `ComputationalStatistics` / SoftwareX archive).
+[*Journal of Open Source Software*](https://joss.theoj.org/) track.
 
-| Path | Role |
-|------|------|
-| `src/localmapbench/` | Installable Python package (skeleton → full API) |
-| `software/` | Legacy research scripts & frozen tables (migration source) |
-| `manuscript/` | Prior LSSP LaTeX (reference only; **not** the JOSS paper) |
-| `docs/` | Suitability, TODOs, venue notes |
-| `tests/` | Pytest suite |
-| `paper.md` | JOSS paper (to add later) |
+Software name: **localmapbench**
 
-## Work 1 status
+## Done in work 1 (local)
 
-- [x] Folder named for JOSS
-- [x] MIT `LICENSE`
-- [x] Package skeleton + README + CONTRIBUTING + CITATION
-- [ ] **Public GitHub repository** (create + push — see below)
+- Renamed workspace folder to `JOSS/`
+- MIT `LICENSE`
+- Installable skeleton: `src/localmapbench/`, `pyproject.toml`, `tests/`
+- README, CONTRIBUTING, CODE_OF_CONDUCT, CITATION.cff, CHANGELOG
+- Local git with **4 iterative commits** (not a single dump)
 
-## Create the public GitHub repo (required to start the 6-month clock)
+## Remaining for work 1 (public)
 
-If `gh` is available and authenticated:
+Create and push a **public** GitHub repo so the JOSS 6-month clock starts:
 
 ```powershell
-cd JOSS
-git init -b main
-# after local commits:
+cd "C:\Users\hoand\OneDrive\Documents\space convolution\JOSS"
+# Install GitHub CLI if needed, then:
+gh auth login
 gh repo create localmapbench --public --source=. --remote=origin --push
 ```
 
-Or create an empty public repo named `localmapbench` on GitHub, then:
+Or create `localmapbench` on github.com (public, empty), then:
 
 ```powershell
 git remote add origin https://github.com/<YOUR_USER>/localmapbench.git
 git push -u origin main
 ```
 
-Update `pyproject.toml` `[project.urls]` if your GitHub username differs from the placeholder.
+Update `pyproject.toml` URLs to match your GitHub username.
+
+## Next (work 2+)
+
+Migrate maps/protocol from `software/` into `src/localmapbench/`, add CI, then continue public commits over months. See `docs/JOSS_TODO.md`.
