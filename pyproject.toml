@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "localmapbench"
-version = "0.1.0"
+version = "0.2.0"
 description = "Matched nested cross-validation benchmarking of feature maps for local regression"
 readme = "README.md"
 license = { file = "LICENSE" }
@@ -20,7 +20,7 @@ keywords = [
   "benchmarking",
 ]
 classifiers = [
-  "Development Status :: 3 - Alpha",
+  "Development Status :: 4 - Beta",
   "Intended Audience :: Science/Research",
   "License :: OSI Approved :: MIT License",
   "Programming Language :: Python :: 3",
@@ -30,6 +30,7 @@ dependencies = [
   "numpy>=1.23",
   "pandas>=1.5",
   "scikit-learn>=1.2",
+  "scipy>=1.9",
 ]
 
 [project.optional-dependencies]
